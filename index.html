@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to my life</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#hero">Sobre Mí</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <button id="theme-toggle">Modo Oscuro</button>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h1>Hola, soy [Kinman Palacios Andrade]</h1>
+    <p>Desarrollador de Software</p>
+  </section>
+
+  <section id="projects">
+    <h2>Proyectos</h2>
+    <div class="filter-buttons">
+      <button class="filter-btn" data-category="all">Todos</button>
+      <button class="filter-btn" data-category="frontend">Frontend</button>
+      <button class="filter-btn" data-category="backend">Backend</button>
+      <button class="filter-btn" data-category="fullstack">Fullstack</button>
+    </div>
+
+    <div class="projects-grid">
+      <article class="project-card" data-category="frontend">
+        <h3>Proyecto 1</h3>
+        <p>Descripción corta del proyecto.</p>
+        <span>HTML, CSS, JS</span>
+        <a href="#" target="_blank">Ver Código</a>
+      </article>
+
+      <article class="project-card" data-category="backend">
+        <h3>Proyecto 2</h3>
+        <p>Descripción corta del proyecto.</p>
+        <span>Node.js, Express</span>
+        <a href="#" target="_blank">Ver Código</a>
+      </article>
+
+      <article class="project-card" data-category="fullstack">
+        <h3>Proyecto 3</h3>
+        <p>Descripción corta del proyecto.</p>
+        <span>React, Node.js</span>
+        <a href="#" target="_blank">Ver Código</a>
+      </article>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
