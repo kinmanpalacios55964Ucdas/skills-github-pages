@@ -60,3 +60,90 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f4f4f4;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Flexbox para la navegación y Hero */
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+/* CSS Grid para las tarjetas de proyectos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.project-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  header nav, header nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+// Modo Oscuro
+const toggleBtn = document.getElementById('theme-toggle');
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+});
+
+// Filtrado de proyectos
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.getAttribute('data-category');
+    
+    projectCards.forEach(card => {
+      if (category === 'all' || card.getAttribute('data-category') === category) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
